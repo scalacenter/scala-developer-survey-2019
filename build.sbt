@@ -51,7 +51,7 @@ val `developer-survey-2019` =
   project.in(file("."))
     .enablePlugins(GhpagesPlugin)
     .settings(
-      git.remoteRepo := "git@github.com:scalacenter/developer-survey-2019",
+      git.remoteRepo := "git@github.com:scalacenter/scala-developer-survey-2019.git",
       mappings in makeSite ++= Def.taskDyn {
         val resultsFileName = "results.json"
         val resultsPath = (collect / target).value / resultsFileName
