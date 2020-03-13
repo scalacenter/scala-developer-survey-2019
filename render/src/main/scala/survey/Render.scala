@@ -82,8 +82,15 @@ object Render {
           node
       }
 
+    val id =
+      questionSummary
+        .title
+        .stripSuffix("?")
+        .toLowerCase
+        .replaceAllLiterally(" ", "-")
+
     frag(
-      h2(questionSummary.title),
+      h2(*.id := id, questionSummary.title, " ", a(*.href := s"#$id", "¶")),
       chartNode
     )
   }
